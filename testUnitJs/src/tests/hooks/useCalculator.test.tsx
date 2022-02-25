@@ -18,3 +18,9 @@ test("test division", () => {
   const { division } = result.current;
   expect(division('1','1')).toEqual("1");
 });
+
+test("test rc", () => {
+  const { result } = renderHook(() => useCalculator());
+  const { square } = result.current;
+  expect(square('1')).toEqual("1");
+});

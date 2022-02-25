@@ -111,33 +111,54 @@ test("test division fonctional", () => {
   expect(label.textContent).toBe(Number(12 / 12).toString());
 });
 
-// test("test modulo fonctional", () => {
-//   act(() => {
-//     ReactDOM.render(<App />, container);
-//   });
-//   const button1 = container.querySelector(".touch[data-value='1']");
-//   const button2 = container.querySelector(".touch[data-value='2']");
-//   const buttonModulo = container.querySelector(".touch[data-value='%']");
-//   const buttonEqual = container.querySelector(".touch[data-value='=']");
-//   const label = container.querySelector(".result");
-//   act(() => {
-//     button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
-//   act(() => {
-//     button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
-//   act(() => {
-//     buttonModulo.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
-//   act(() => {
-//     button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
-//   act(() => {
-//     button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
-//   act(() => {
-//     buttonEqual.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-//   });
+test("test modulo fonctional", () => {
+  act(() => {
+    ReactDOM.render(<App />, container);
+  });
+  const button1 = container.querySelector(".touch[data-value='1']");
+  const button2 = container.querySelector(".touch[data-value='2']");
+  const buttonModulo = container.querySelector(".touch[data-value='%']");
+  const buttonEqual = container.querySelector(".touch[data-value='=']");
+  const label = container.querySelector(".result");
+  act(() => {
+    button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    buttonModulo.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button2.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    buttonEqual.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
 
-//   expect(label.textContent).toBe(Number(12 % 12).toString());
-// });
+  expect(label.textContent).toBe(Number(12 % 12).toString());
+});
+
+test("test rc fonctional", () => {
+  act(() => {
+    ReactDOM.render(<App />, container);
+  });
+  const button1 = container.querySelector(".touch[data-value='1']");
+  const buttonRc = container.querySelector(".touch[data-value='√x']");
+  const buttonEqual = container.querySelector(".touch[data-value='=']");
+  const label = container.querySelector(".result");
+  act(() => {
+    buttonRc.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    button1.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+  act(() => {
+    buttonEqual.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  });
+
+  expect(label.textContent).toBe(Number(1).toString());
+});
